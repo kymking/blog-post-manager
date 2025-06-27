@@ -1,16 +1,3 @@
 {
-  "posts": [
-    {
-      "id": "1",
-      "title": "Test Post",
-      "content": "This is a sample post",
-      "author": "John"
-    },
-    {
-      "id": "f8c3",
-      "title": "Mee",
-      "content": "irws",
-      "author": "dsd"
-    }
-  ]
+  "posts": []
 }

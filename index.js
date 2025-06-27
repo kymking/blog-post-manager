@@ -11,7 +11,6 @@ const cancelEdit = document.getElementById("cancel-edit");
 
 let currentPost = null;
 
-// Display all posts
 function displayPosts() {
   fetch(baseURL)
     .then((res) => {
@@ -27,7 +26,7 @@ function displayPosts() {
         postList.appendChild(div);
       });
 
-      if (posts.length > 0) handlePostClick(posts[0]); // Show first post by default
+      if (posts.length > 0) handlePostClick(posts[0]); 
     })
     .catch((err) => {
       postList.innerHTML = "Error loading posts.";
@@ -35,7 +34,6 @@ function displayPosts() {
     });
 }
 
-// Handle single post view
 function handlePostClick(post) {
   currentPost = post;
   detailTitle.textContent = post.title;
@@ -44,7 +42,6 @@ function handlePostClick(post) {
   editPostForm.classList.add("hidden");
 }
 
-// Add a new post
 function addNewPostListener() {
   newPostForm.addEventListener("submit", (e) => {
     e.preventDefault();
@@ -71,7 +68,6 @@ function addNewPostListener() {
   });
 }
 
-// Edit post
 if (editButton && editPostForm) {
   editButton.addEventListener("click", () => {
     if (!currentPost) return;
@@ -106,14 +102,12 @@ if (editPostForm) {
   });
 }
 
-// Cancel edit
 if (cancelEdit && editPostForm) {
   cancelEdit.addEventListener("click", () => {
     editPostForm.classList.add("hidden");
   });
 }
 
-// Delete post
 if (deleteButton) {
   deleteButton.addEventListener("click", () => {
     if (!currentPost) return;
@@ -136,7 +130,6 @@ if (deleteButton) {
   });
 }
 
-// Start the app
 function main() {
   displayPosts();
   addNewPostListener();
